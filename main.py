@@ -34,6 +34,7 @@ def main(cScreen):
                     continue
                 for j in range(xshift,len(data[i])):
                     if sum(getColumnWidths(data)[xshift:j+1])+j+1 > maxx:
+                        cScreen.addstr(i,maxx-1,">")
                         continue
                     cScreen.addstr(i,sum(getColumnWidths(data)[xshift:j])+j,data[i+yshift][j])
             cScreen.refresh()
